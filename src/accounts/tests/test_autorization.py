@@ -32,7 +32,7 @@ class TestAuthCustomer(TestCase):
     def test_user_access_admin_panel(self):
         self.client.force_login(self.user)
         response = self.client.get(reverse("admin:index"))
-        self.assertEquals(response.status_code, HTTPStatus.FOUND)
+        self.assertEqual(response.status_code, HTTPStatus.FOUND)
 
     def test_manager_access_admin_panel(self):
         self.client.force_login(self.manager)
@@ -43,10 +43,10 @@ class TestAuthCustomer(TestCase):
     def test_user_access_index_pae(self):
         self.client.force_login(self.user)
         response = self.client.get(reverse("index"))
-        self.assertEquals(response.status_code, HTTPStatus.FOUND)
+        self.assertEqual(response.status_code, HTTPStatus.FOUND)
 
     @unittest.expectedFailure
     def test_user_access_index_page_failure_example(self):
         self.client.force_login(self.manager)
         response = self.client.get(reverse("admin:index"))
-        self.assertEquals(response.status_code, HTTPStatus.IM_A_TEAPOT)
+        self.assertEqual(response.status_code, HTTPStatus.IM_A_TEAPOT)
