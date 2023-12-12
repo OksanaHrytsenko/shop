@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+{% load static %}
+{% block content %}
+
+    <table class="table table-dark table-striped">
+        <thead>
+        <tr>
+            <th scope="col">Brand</th>
+            <th scope="col">Country</th>
+        </tr>
+        </thead>
+        <tbody>
+        {% for b in brand %}
+            <tr>
+                <td>{{ b.name_brand }}</td>
+            <td>{{ b.country_of_brand }}</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+{% endblock content %}
