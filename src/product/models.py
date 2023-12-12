@@ -41,7 +41,7 @@ class Category(models.Model):
         verbose_name = "Category"
 
     def __str__(self):
-        return f"{self.name} ({self.id}"
+        return f"{self.name}"
 
 
 class Brand(models.Model):
