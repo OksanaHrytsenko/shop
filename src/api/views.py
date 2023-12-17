@@ -1,11 +1,10 @@
 from django.contrib.auth import get_user_model
-from django.shortcuts import render
 from rest_framework.generics import ListAPIView, RetrieveAPIView
 from rest_framework.viewsets import ModelViewSet
 
 from api.serializers import (BrandSerializer, CategorySerializer,
                              CustomerSerializer, ProductSerializer)
-from product.models import Brand, Category, Order, Product
+from product.models import Brand, Category, Product
 
 
 class CustomerViewSet(ModelViewSet):
