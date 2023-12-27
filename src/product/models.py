@@ -3,7 +3,7 @@ from django.db import models
 
 
 class Product(models.Model):
-    category = models.ForeignKey(to="product.Category", on_delete=models.CASCADE, related_name="categores")
+    category = models.ForeignKey(to="product.Category", on_delete=models.CASCADE, related_name="categories")
     brand = models.ForeignKey(to="product.Brand", on_delete=models.CASCADE, related_name="brands")
     title = models.CharField(max_length=255)
     description = models.TextField(max_length=500, blank=True, null=True)
