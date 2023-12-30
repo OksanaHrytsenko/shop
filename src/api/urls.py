@@ -25,6 +25,7 @@ schema_view = get_schema_view(
 
 urlpatterns = [
     path("", include(router.urls)),
+    path("auth/", include("djoser.urls.jwt")),
     path("docs/", schema_view.with_ui("swagger", cache_timeout=0), name="swagger_docs"),
     path("brand/<int:pk>/brand/<int:orders>/", ProductDetailView.as_view(), name="product_detail"),
     path("brand/", BrandListView.as_view(), name="brand_list"),
