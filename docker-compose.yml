@@ -26,7 +26,20 @@ services:
     env_file:
       - .env
 
+  pgadmin:
+    image: dpage/pgadmin4
+    container_name: pgadmin_container
+    restart: on-failure
+    ports:
+      - 5000:80
+    volumes:
+      - pgadmin_data:/var/lib/pgadmin
+    env_file:
+      - .env
+    depends_on:
+      - postgres
+
 volumes:
   pg_data: { }
-
+  pgadmin_data: { }
 
