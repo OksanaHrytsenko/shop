@@ -71,7 +71,7 @@ services:
     volumes:
       - static_content:/shop/src/static
       - media_content:/shop/src/media
-      - ./nginx:/etc/nginx/conf.dk
+      - ./nginx:/etc/nginx/conf.d
     ports:
       - 80:80
       - 443:443

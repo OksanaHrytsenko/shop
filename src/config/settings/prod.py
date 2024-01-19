@@ -11,6 +11,7 @@ ALLOWED_HOSTS = ["localhost"]
 # Database
 # https://docs.djangoproject.com/en/4.2/ref/settings/#databases
 
+
 DATABASES = {
     "default": {
              "ENGINE": "django.db.backends.postgresql",
@@ -30,6 +31,6 @@ DATABASES = {
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.2/howto/static-files/
 STATIC_ROOT = BASE_DIR / "static/"  # NOQA
-STATIC_URL = "static/"
+STATIC_URL = "/static/"
 MEDIA_ROOT = BASE_DIR / "media/"  # NOQA
 MEDIA_URL = "/media/"
