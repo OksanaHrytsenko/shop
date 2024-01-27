@@ -10,8 +10,10 @@ services:
     volumes:
       - ./src:/shop/src
       - ./commands:/shop/commands
+      - static_content:/shop/src/static
+      - media_content:/shop/src/media
     command:
-      - ./commands/start_server_dev.sh
+      - ./commands/start_server_${MODE}.sh
     env_file:
       - .env
     depends_on:
@@ -64,7 +66,24 @@ services:
     depends_on:
       - mongodb
 
+  nginx:
+    image: nginx:1.19
+    volumes:
+      - static_content:/shop/src/static
+      - media_content:/shop/src/media
+      - ./nginx:/etc/nginx/conf.d
+    ports:
+      - 80:80
+      - 443:443
+    env_file:
+      - .env
+    depends_on:
+      - backend
+
+
 volumes:
+  static_content: { }
+  media_content: { }
   pg_data: { }
   pgadmin_data: { }
   mongo_data: { }

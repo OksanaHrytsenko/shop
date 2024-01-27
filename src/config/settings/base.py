@@ -24,6 +24,7 @@ INSTALLED_APPS = [
     "core",
     "product",
     "api",
+    "blog",
 ]
 
 MIDDLEWARE = [
